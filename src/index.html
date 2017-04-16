@@ -4,11 +4,60 @@
   <meta charset="utf-8">
   <title>ArtAlum</title>
   <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.red-pink.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .loader {
+      margin: 60px auto;
+      font-size: 10px;
+      position: relative;
+      text-indent: -9999em;
+      border-top: .6em solid rgba(0, 150, 136, 0.8);
+      border-right: .6em solid rgba(0, 150, 136, 0.8);
+      border-bottom: .6em solid rgba(0, 150, 136, 0.8);
+      border-left: .6em solid rgba(0, 150, 136, 0.4);
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-animation: load8 1.1s infinite linear;
+      animation: load8 1.1s infinite linear;
+    }
+    .loader,
+    .loader:after {
+      border-radius: 50%;
+      width: 4em;
+      height: 4em;
+    }
+    @-webkit-keyframes load8 {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes load8 {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <div style="text-align: center;">
+      <div class="loader">Loading...</div>
+    </div>
+  </app-root>
 </body>
 </html>

@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Art Alum';
+
+  links = [
+    {path: '/home', label: 'Accueil'},
+    {path: '/catalogue', label: 'Catalogue'},
+    {path: '/about', label: 'A propos'},
+    {path: '/contact', label: 'Contact'}
+  ]
+
 }

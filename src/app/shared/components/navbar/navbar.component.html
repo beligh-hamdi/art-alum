@@ -1,0 +1,8 @@
+<mdl-layout-header-row>
+  <mdl-layout-title>{{title}}</mdl-layout-title>
+  <mdl-layout-spacer></mdl-layout-spacer>
+  <!-- Navigation. We hide it in small screens. -->
+  <nav class="mdl-navigation mdl-layout--large-screen-only">
+    <a *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active" class="mdl-navigation__link">{{link.label}}</a>
+  </nav>
+</mdl-layout-header-row>

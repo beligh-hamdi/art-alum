@@ -1,4 +1,11 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
+  <mdl-layout-header>
+    <app-navbar [title]="title" [links]="links"></app-navbar>
+  </mdl-layout-header>
+  <mdl-layout-drawer>
+    <app-sidebar [title]="title" [links]="links"></app-sidebar>
+  </mdl-layout-drawer>
+  <mdl-layout-content class="app-content">
+    <router-outlet></router-outlet>
+  </mdl-layout-content>
+</mdl-layout>
