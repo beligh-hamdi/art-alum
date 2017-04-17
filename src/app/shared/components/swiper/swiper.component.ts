@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import 'swiper';
+/*import 'swiper'; */
 
 @Component({
   selector: 'app-swiper',
