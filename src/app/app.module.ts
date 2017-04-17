@@ -16,10 +16,14 @@ import {
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
+
+
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { SwiperModule } from 'angular2-useful-swiper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +37,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { LocationComponent } from './location/location.component';
 import { DataService } from './shared/services/data.service';
 import { MapComponent } from './shared/components/map/map.component';
+import { SwiperComponent } from './shared/components/swiper/swiper.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -49,7 +54,8 @@ export function createTranslateLoader(http: Http) {
     SidebarComponent,
     GalleryComponent,
     LocationComponent,
-    MapComponent
+    MapComponent,
+    SwiperComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +75,7 @@ export function createTranslateLoader(http: Http) {
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBw30Me8aUMBCG4JcwQHcrG9wHezRZFkN8'
     }),
+    SwiperModule,
     AppRoutingModule
   ],
   providers: [DataService],

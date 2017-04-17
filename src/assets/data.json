@@ -5,6 +5,7 @@
   },
   "links": [
     {"path": "/home", "label": "Home", "icon":"home"},
+    {"path": "/gallery", "label": "Gallery", "icon":"photo_library"},
     {"path": "/catalogue", "label": "Catalogue", "icon":"photo_library"},
     {"path": "/about", "label": "About", "icon":"description"},
     {"path": "/contact", "label": "Contact", "icon":"contacts"}
@@ -23,4 +24,7 @@
     "googleplus": null
   }
 }
+
+
+
 
