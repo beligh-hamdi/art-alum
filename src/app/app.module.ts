@@ -16,8 +16,8 @@ import {
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
-import {TranslateModule } from '@ngx-translate/core';
-import {TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,7 +56,7 @@ export function createTranslateLoader(http: Http) {
     MdButtonModule, MdCheckboxModule, MdToolbarModule, MdSidenavModule, MdIconModule, MdListModule, MdCardModule,
     TranslateModule.forRoot({
       loader: {
-        provide: TranslateHttpLoader,
+        provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [Http]
       }
