@@ -4,8 +4,7 @@ import 'rxjs/add/operator/filter';
 
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 import {MdIconRegistry} from "@angular/material";
-import {DomSanitizer} from "@angular/platform-browser";
-
+import {DataService} from "./shared/services/data.service";
 
 @Component({
   selector: 'app-root',
@@ -13,54 +12,64 @@ import {DomSanitizer} from "@angular/platform-browser";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'Art Alum';
-  links = [
-    {path: '/home', label: 'Accueil', icon:'home'},
-    {path: '/catalogue', label: 'Catalogue', icon:'photo_library'},
-    {path: '/about', label: 'A propos', icon:'description'},
-    {path: '/contact', label: 'Contact', icon:'contacts'}
-  ];
-  isMobile: boolean = true;
-  watcher: Subscription;
-  activeMediaQuery = "";
+  title: string;
+  links: Array<any>= [];
+  isLargeScreen: boolean= true;
+  logoUrl: string;
+
+  activeMediaQuery= '';
   mediaQuery= '';
 
-  constructor(media: ObservableMedia, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
-    this.watcher = media.subscribe((change: MediaChange) => {
+  subscriptionMedia: Subscription;
+  subscriptionService: Subscription;
+
+  constructor(media: ObservableMedia,
+              iconRegistry: MdIconRegistry,
+              private dataService: DataService
+  ) {
+
+    this.subscriptionMedia = media.subscribe((change: MediaChange) => {
       this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : "";
-      this.loadContent(change.mqAlias);
-      // change.mqAlias: lg md sm xs
+      this.loadContent(change.mqAlias); // change.mqAlias: lg md sm xs
     });
 
-
     iconRegistry.registerFontClassAlias('fontawesome', 'fa');
-
-    /*
-    iconRegistry.addSvgIcon(
-     'thumbs-up', sanitizer.bypassSecurityTrustResourceUrl('assets/img/examples/thumbup-icon.svg'))
-     */
-
   }
-
-
 
 
   loadContent(media) {
     this.mediaQuery = media;
-    media === 'sm' || media === 'xs' ? this.isMobile = false : this.isMobile = true;
+    media === 'sm' || media === 'xs' ? this.isLargeScreen = false : this.isLargeScreen = true;
   }
 
-  checkType(){
+  checkScreenType(){
     if(this.mediaQuery === 'sm' || this.mediaQuery === 'xs') return 'over';
     if(this.mediaQuery === 'md' || this.mediaQuery === 'lg') return 'side';
   }
 
   ngOnInit() {
+    this.subscriptionService = this.dataService.fetchAll().subscribe(
+      (data) => {
+        this.title = data.configuration.title;
+        this.logoUrl = data.configuration.logoUrl;
+        this.links = data.links;
 
+      }, (error) => {
+        console.log('Error', error);
+      },
+      () => {
+        //console.log('finish');
+      }
+    );
   }
 
   ngOnDestroy() {
-    this.watcher.unsubscribe();
+    if (this.subscriptionMedia) {
+      this.subscriptionMedia.unsubscribe();
+    }
+    if (this.subscriptionService) {
+      this.subscriptionService.unsubscribe();
+    }
   }
 
 }

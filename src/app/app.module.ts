@@ -27,6 +27,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { LocationComponent } from './location/location.component';
+import {DataService} from "./shared/services/data.service";
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import { LocationComponent } from './location/location.component';
 
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

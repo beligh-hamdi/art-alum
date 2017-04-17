@@ -1,0 +1,12 @@
+{
+  "configuration" : {
+    "title": "Art Alum",
+    "logoUrl": "assets/img/logo2.png"
+  },
+  "links": [
+    {"path": "/home", "label": "Accueil", "icon":"home"},
+    {"path": "/catalogue", "label": "Catalogue", "icon":"photo_library"},
+    {"path": "/about", "label": "A propos", "icon":"description"},
+    {"path": "/contact", "label": "Contact", "icon":"contacts"}
+  ]
+}
