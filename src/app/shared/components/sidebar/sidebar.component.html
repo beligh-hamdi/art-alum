@@ -1,4 +1,7 @@
-<mdl-layout-title>{{title}}</mdl-layout-title>
-<nav class="mdl-navigation">
-  <a *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active" class="mdl-navigation__link">{{link.label}}</a>
-</nav>
+<md-nav-list>
+  <md-list-item *ngFor="let link of links">
+    <md-icon md-list-icon>{{link.icon}}</md-icon>
+    <a md-line [routerLink]="link.path">{{link.label}}</a>
+  </md-list-item>
+</md-nav-list>
+

@@ -1,11 +1,19 @@
-<mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
-  <mdl-layout-header>
-    <app-navbar [title]="title" [links]="links"></app-navbar>
-  </mdl-layout-header>
-  <mdl-layout-drawer>
+<md-toolbar color="primary">
+  <button md-icon-button (click)="sidenav.toggle()">
+    <md-icon class="app-toolbar-menu">menu</md-icon>
+  </button>
+  <span><img src="src/assets/img/logo2.png" style="height: 24px"></span>
+  <span>{{title}}</span>
+  <span class="app-fill-remaining-space"></span>
+  <!--<span>Right Aligned Text</span>-->
+</md-toolbar>
+<md-sidenav-container>
+  <md-sidenav #sidenav [mode]="checkType()" [opened]="isMobile">
     <app-sidebar [title]="title" [links]="links"></app-sidebar>
-  </mdl-layout-drawer>
-  <mdl-layout-content class="app-content">
+  </md-sidenav>
+  <div class="page-content">
     <router-outlet></router-outlet>
-  </mdl-layout-content>
-</mdl-layout>
+  </div>
+</md-sidenav-container>
+
+

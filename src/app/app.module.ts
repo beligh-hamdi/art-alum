@@ -3,15 +3,31 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  MdButtonModule,
+  MdCheckboxModule,
+  MdToolbarModule,
+  MdSidenavModule,
+  MdIconModule,
+  MdListModule,
+  MdCardModule
+} from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import 'hammerjs';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MdlModule } from '@angular-mdl/core';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { LocationComponent } from './location/location.component';
+
 
 @NgModule({
   declarations: [
@@ -21,13 +37,19 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     ContactComponent,
     CatalogueComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    GalleryComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MdlModule,
+    BrowserAnimationsModule,
+
+    FlexLayoutModule,
+    MdButtonModule, MdCheckboxModule, MdToolbarModule, MdSidenavModule, MdIconModule, MdListModule, MdCardModule,
+
     AppRoutingModule
   ],
   providers: [],
