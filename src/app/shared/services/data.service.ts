@@ -12,37 +12,37 @@ export class DataService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private options = new RequestOptions({ headers: this.headers });
-  private apiUrl = 'assets/data.json';
+  private apiUrlData = 'assets/data.json';
 
   constructor(private http: Http) { }
 
   fetchAll(): Observable<any> {
-    return this.http.get(`${this.apiUrl}`)
+    return this.http.get(`${this.apiUrlData}`)
       .map(response => response.json())
       .catch(this.handleError)
       .retry(3);
   }
 
   fetch(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`)
+    return this.http.get(`${this.apiUrlData}/${id}`)
       .map(response => response.json())
       .catch(this.handleError);
   }
 
   remove(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`, this.options)
+    return this.http.delete(`${this.apiUrlData}/${id}`, this.options)
       .map(response => response.json())
       .catch(this.handleError);
   }
 
   add(modelObject: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, modelObject, this.options)
+    return this.http.post(`${this.apiUrlData}`, modelObject, this.options)
       .map(response => response.json())
       .catch(this.handleError);
   }
 
   update(modelObject: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${modelObject.id}`, modelObject, this.options)
+    return this.http.put(`${this.apiUrlData}/${modelObject.id}`, modelObject, this.options)
       .map(response => response.json())
       .catch(this.handleError);
   }

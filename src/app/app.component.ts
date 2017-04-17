@@ -16,6 +16,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent implements OnInit, OnDestroy {
   title: string;
   links: Array<any>= [];
+
   isLargeScreen: boolean= true;
   logoUrl: string;
 
@@ -59,7 +60,6 @@ export class AppComponent implements OnInit, OnDestroy {
         this.title = data.configuration.title;
         this.logoUrl = data.configuration.logoUrl;
         this.links = data.links;
-
       }, (error) => {
         console.log('Error', error);
       },

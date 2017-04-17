@@ -5,21 +5,88 @@
   </md-list-item>
 </md-list>
 
+
 <md-card>
   <md-card-content>
-    <p>Pour nous contacter:</p>
-    <ul>
-      <li><md-icon fontSet="fontawesome" fontIcon="fa-envelope-o"></md-icon> Email: hamdi.artalum@gmail.com</li>
-      <li><md-icon fontSet="fontawesome" fontIcon="fa-internet-explorer"></md-icon> Site Web: http://www.art-alum.com</li>
-      <li><md-icon fontSet="fontawesome" fontIcon="fa-instagram"></md-icon> Instagram: art.alum</li>
-      <li><md-icon fontSet="fontawesome" fontIcon="fa-mobile"></md-icon> Tel: (+216) 56 130 115</li>
-
-      <li><md-icon fontSet="fontawesome" fontIcon="fa-facebook-official"></md-icon>
-        Facebook: https://www.facebook.com/pg/Art-Alum-291817644584749/</li>
-    </ul>
+    <h3>Où nous trouver:</h3>
+    <app-map></app-map>
   </md-card-content>
 </md-card>
 
 
+<md-card>
+  <md-card-content>
+    <h3>Pour nous contacter:</h3>
+
+    <md-list>
+
+      <md-list-item>
+        <md-icon md-list-icon>location_on</md-icon>
+        <span>Adresse: {{contact?.address1}}</span>
+      </md-list-item>
+
+      <md-list-item>
+        <md-icon md-list-icon>phone</md-icon>
+        <span>Tel: {{contact?.tel1}} </span>
+      </md-list-item>
+
+      <md-list-item>
+        <md-icon md-list-icon>email</md-icon>
+        <span>Email: {{contact?.email}}</span>
+      </md-list-item>
+
+      <md-list-item>
+        <md-icon md-list-icon fontSet="fontawesome" fontIcon="fa-facebook-official"></md-icon>
+        <span>Facebook: <a [href]="contact?.facebook" target="_blank">{{contact?.facebook}}</a></span>
+      </md-list-item>
+
+      <md-list-item>
+        <md-icon md-list-icon fontSet="fontawesome" fontIcon="fa-internet-explorer"></md-icon>
+        <span>Site Web: <a [href]="contact?.website" target="_blank">{{contact?.website}}</a></span>
+      </md-list-item>
+
+      <md-list-item>
+        <md-icon md-list-icon fontSet="fontawesome" fontIcon="fa-instagram"></md-icon>
+        <span>Instagram: {{contact?.instagram}} </span>
+      </md-list-item>
+
+    </md-list>
+
+  </md-card-content>
+</md-card>
+
+
+<md-card>
+  <md-card-content>
+    <h3>Nous écrire:</h3>
+
+    <div fxLayout='column'>
+
+      <div fxFlex>
+        <md-input-container style="width: 100%;">
+          <input mdInput placeholder="Email" required type="email">
+        </md-input-container>
+      </div>
+
+      <div fxFlex>
+        <md-input-container style="width: 100%;">
+          <input mdInput placeholder="Nom" required>
+        </md-input-container>
+      </div>
+
+      <div fxFlex>
+        <md-input-container style="width: 100%;">
+          <textarea rows="4" cols="50" mdInput placeholder="Message" required></textarea>
+        </md-input-container>
+      </div>
+
+      <div fxFlex>
+        <button md-raised-button (click)="sendMesssage()"><md-icon md-list-icon>send</md-icon> Send</button>
+      </div>
+
+    </div>
+
+  </md-card-content>
+</md-card>
 
 

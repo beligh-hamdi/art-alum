@@ -11,10 +11,12 @@ import {
   MdSidenavModule,
   MdIconModule,
   MdListModule,
-  MdCardModule
+  MdCardModule, MdInputModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
+
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -30,6 +32,7 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { GalleryComponent } from './gallery/gallery.component';
 import { LocationComponent } from './location/location.component';
 import { DataService } from './shared/services/data.service';
+import { MapComponent } from './shared/components/map/map.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,7 +48,8 @@ export function createTranslateLoader(http: Http) {
     NavbarComponent,
     SidebarComponent,
     GalleryComponent,
-    LocationComponent
+    LocationComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -54,12 +58,16 @@ export function createTranslateLoader(http: Http) {
     BrowserAnimationsModule,
     FlexLayoutModule,
     MdButtonModule, MdCheckboxModule, MdToolbarModule, MdSidenavModule, MdIconModule, MdListModule, MdCardModule,
+    MdInputModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [Http]
       }
+    }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBw30Me8aUMBCG4JcwQHcrG9wHezRZFkN8'
     }),
     AppRoutingModule
   ],
