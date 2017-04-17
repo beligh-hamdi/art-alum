@@ -9,12 +9,8 @@ export class SidebarComponent implements OnInit {
   @Input() title;
   @Input() links;
 
-
   constructor() { }
 
   ngOnInit() {
   }
-
-
-
 }
