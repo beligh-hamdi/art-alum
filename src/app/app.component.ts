@@ -6,6 +6,8 @@ import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 import {MdIconRegistry} from "@angular/material";
 import {DataService} from "./shared/services/data.service";
 
+import {TranslateService} from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,7 +27,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(media: ObservableMedia,
               iconRegistry: MdIconRegistry,
-              private dataService: DataService
+              private dataService: DataService,
+              private translate: TranslateService
   ) {
 
     this.subscriptionMedia = media.subscribe((change: MediaChange) => {
@@ -34,6 +37,9 @@ export class AppComponent implements OnInit, OnDestroy {
     });
 
     iconRegistry.registerFontClassAlias('fontawesome', 'fa');
+
+    translate.setDefaultLang('fr');
+    translate.use('fr');
   }
 
 
