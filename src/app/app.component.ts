@@ -3,6 +3,8 @@ import {Subscription} from "rxjs/Subscription";
 import 'rxjs/add/operator/filter';
 
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
+import {MdIconRegistry} from "@angular/material";
+import {DomSanitizer} from "@angular/platform-browser";
 
 
 @Component({
@@ -23,13 +25,25 @@ export class AppComponent implements OnInit, OnDestroy {
   activeMediaQuery = "";
   mediaQuery= '';
 
-  constructor(media: ObservableMedia) {
+  constructor(media: ObservableMedia, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
     this.watcher = media.subscribe((change: MediaChange) => {
       this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : "";
       this.loadContent(change.mqAlias);
       // change.mqAlias: lg md sm xs
     });
+
+
+    iconRegistry.registerFontClassAlias('fontawesome', 'fa');
+
+    /*
+    iconRegistry.addSvgIcon(
+     'thumbs-up', sanitizer.bypassSecurityTrustResourceUrl('assets/img/examples/thumbup-icon.svg'))
+     */
+
   }
+
+
+
 
   loadContent(media) {
     this.mediaQuery = media;
