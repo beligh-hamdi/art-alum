@@ -7,7 +7,7 @@
     {"path": "/home", "label": "Home", "icon":"home"},
     {"path": "/catalogue", "label": "Catalogue", "icon":"photo_library"},
     {"path": "/about", "label": "About", "icon":"description"},
-    {"path": "/contact,", "label": "Contact", "icon":"contacts"}
+    {"path": "/contact", "label": "Contact", "icon":"contacts"}
   ],
   "contact": {
     "email": "hamdi.artalum@gmail.com",

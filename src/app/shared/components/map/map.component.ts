@@ -13,7 +13,10 @@ export class MapComponent implements OnInit {
   lat1: number = 36.8793893;
   lng1: number = 10.1855471;
 
-  zoom: number = 8;
+  latInit: number = 37;
+  lngInit: number = 10.1855471;
+
+  zoom: number = 9;
 
   constructor() { }
 
