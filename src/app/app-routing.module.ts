@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { CatalogueComponent } from './catalogue/catalogue.component';
-import { GalleryComponent } from './gallery/gallery.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'catalogue', component: CatalogueComponent },
-  { path: 'gallery', component: GalleryComponent },
+  { path: 'home', loadChildren: './home/home.module#HomeModule' },
+  { path: 'about',   loadChildren: './about/about.module#AboutModule' },
+  { path: 'contact', loadChildren: './contact/contact.module#ContactModule' },
+  { path: 'catalogue', loadChildren: './catalogue/catalogue.module#CatalogueModule' },
+  { path: 'gallery',  loadChildren: './gallery/gallery.module#GalleryModule' },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: '**', component: HomeComponent }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

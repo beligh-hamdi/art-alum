@@ -5,16 +5,15 @@
   </md-list-item>
 </md-list>
 
-<app-swiper [images]="images"></app-swiper>
-
-<!--
-<div fxLayout='row' fxLayout.lt-md='column'>
-  <div fxFlex="50">
-    <app-swiper></app-swiper>
-  </div>
-
-  <div fxFlex="50">
-    <app-swiper></app-swiper>
-  </div>
-</div>
--->
+<md-card>
+  <md-card-content>
+    <swiper class="swiper" [config]="config">
+      <div class="swiper-wrapper">
+        <img class="swiper-slide" *ngFor="let image of images" [src]="image">
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </swiper>
+  </md-card-content>
+</md-card>

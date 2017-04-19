@@ -1,0 +1,22 @@
+<md-toolbar color="primary">
+  <button md-icon-button (click)="sidenav.toggle()">
+    <md-icon class="app-toolbar-menu">menu</md-icon>
+  </button>
+  <span><img [src]="logoUrl" style="height: 24px"></span>
+  <span>{{title}}</span>
+  <span class="app-fill-remaining-space"></span>
+  <app-toggle-language></app-toggle-language>
+</md-toolbar>
+<md-sidenav-container>
+  <md-sidenav #sidenav [mode]="checkScreenType()" [opened]="isLargeScreen">
+    <md-nav-list>
+      <md-list-item *ngFor="let link of links">
+        <md-icon md-list-icon>{{link.icon}}</md-icon>
+        <a md-line [routerLink]="link.path">{{link.label  | translate}}</a>
+      </md-list-item>
+    </md-nav-list>
+  </md-sidenav>
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

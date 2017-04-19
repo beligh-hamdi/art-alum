@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {DataService} from "../shared/services/data.service";
-import {Subscription} from "rxjs/Subscription";
-
+import {DataService} from '../shared/services/data.service';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-contact',
@@ -12,13 +11,12 @@ export class ContactComponent implements OnInit, OnDestroy {
   contact: any;
   subscription: Subscription;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
 
-  ngOnInit() {
-    this.subscription = this.dataService.fetchAll().subscribe(
+    this.subscription = dataService.fetchAll().subscribe(
       (data) => {
         this.contact = data.contact;
-        console.log('data', data);
+        //console.log('data', data);
       }, (error) => {
         console.log('Error', error);
       },
@@ -26,16 +24,17 @@ export class ContactComponent implements OnInit, OnDestroy {
         //console.log('finish');
       }
     );
+
   }
+
+  ngOnInit() {}
+
+  sendMesssage(){}
 
   ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-  }
-
-  sendMesssage(){
-
   }
 
 }

@@ -8,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class GalleryComponent implements OnInit {
   images: string[];
 
+  config: any = {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 30,
+    zoom: true,
+  };
+
   constructor() { }
 
   ngOnInit() {

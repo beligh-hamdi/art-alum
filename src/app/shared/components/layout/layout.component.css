@@ -1,0 +1,23 @@
+mdl-layout-title .app-content{
+  padding: 12px;
+}
+
+md-sidenav {
+  width: 200px;
+}
+
+.mat-sidenav{
+  background: #d7d8d6;
+}
+
+.mat-toolbar.mat-primary {
+  background: #e82729;
+}
+
+.page-content {
+  padding: 10px;
+}
+
+.app-fill-remaining-space {
+  flex: 1 1 auto;
+}

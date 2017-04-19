@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SwiperComponent } from './swiper.component';
+import { ToggleLanguageComponent } from './toggle-language.component';
 
-describe('SwiperComponent', () => {
-  let component: SwiperComponent;
-  let fixture: ComponentFixture<SwiperComponent>;
+describe('ToggleLanguageComponent', () => {
+  let component: ToggleLanguageComponent;
+  let fixture: ComponentFixture<ToggleLanguageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SwiperComponent ]
+      declarations: [ ToggleLanguageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SwiperComponent);
+    fixture = TestBed.createComponent(ToggleLanguageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
