@@ -1,0 +1,13 @@
+.mat-icon {
+   height: auto;
+}
+
+.mat-menu-item {
+  line-height: normal;
+  z-index: 5000;
+}
+
+md-menu {
+
+}
+

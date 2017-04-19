@@ -4,7 +4,7 @@
     "logoUrl": "assets/img/logo2.png"
   },
   "links": [
-    {"path": "/home", "label": "Home", "icon":"home"},
+    {"path": "/", "label": "Home", "icon":"home"},
     {"path": "/gallery", "label": "Gallery", "icon":"photo_library"},
     {"path": "/catalogue", "label": "Catalogue", "icon":"photo_library"},
     {"path": "/about", "label": "About", "icon":"description"},

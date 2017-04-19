@@ -1,11 +1,13 @@
-<span>
-  <button md-icon-button (click)="changeLng('fr')" [disabled]="currentLang==='fr'">
-  <md-icon svgIcon="flag-fr"></md-icon>
+<button md-icon-button [mdMenuTriggerFor]="menu">
+  <md-icon>language</md-icon>
 </button>
-</span>
-
-<span>
-  <button md-icon-button (click)="changeLng('en')" [disabled]="currentLang==='en'">
-    <md-icon svgIcon="flag-gb"></md-icon>
+<md-menu #menu="mdMenu">
+  <button md-menu-item [disabled]="currentLang==='fr'" (click)="changeLng('fr')">
+    <md-icon svgIcon="flag-fr"></md-icon>
+    <span>Français</span>
   </button>
-</span>
+  <button md-menu-item [disabled]="currentLang==='en'" (click)="changeLng('en')">
+    <md-icon svgIcon="flag-gb">flag-gb</md-icon>
+    <span>English</span>
+  </button>
+</md-menu>
