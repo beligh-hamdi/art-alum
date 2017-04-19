@@ -5,6 +5,7 @@ import { CatalogueRoutingModule } from './catalogue-routing.module';
 
 import { MdIconModule, MdListModule, MdCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 import { CatalogueComponent } from './catalogue.component';
 
@@ -14,6 +15,7 @@ import { CatalogueComponent } from './catalogue.component';
     CatalogueRoutingModule,
 
     FlexLayoutModule,
+    LazyLoadImageModule,
     MdIconModule, MdListModule, MdCardModule
   ],
   declarations: [

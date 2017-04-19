@@ -9,7 +9,7 @@
   <md-card-content>
     <swiper class="swiper" [config]="config">
       <div class="swiper-wrapper">
-        <img class="swiper-slide" *ngFor="let image of images" [src]="image">
+        <img class="swiper-slide" *ngFor="let image of images" [defaultImage]="defaultImage" [lazyLoad]="image" [offset]="offset">
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
@@ -17,3 +17,4 @@
     </swiper>
   </md-card-content>
 </md-card>
+

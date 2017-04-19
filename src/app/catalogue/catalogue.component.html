@@ -15,13 +15,21 @@
 <div fxLayout='row' fxLayout.lt-md='column'>
   <div fxFlex="25">
     <md-card>
-      <img md-card-image src="https://raw.githubusercontent.com/beligh-hamdi/art-alum/master/photos/flayer1.png">
+      <img md-card-image
+           [defaultImage]="defaultImage"
+           [lazyLoad]="'https://raw.githubusercontent.com/beligh-hamdi/art-alum/master/photos/flayer1.png'"
+           [offset]="offset">
     </md-card>
   </div>
 
   <div fxFlex="25">
     <md-card>
-      <img md-card-image src="https://raw.githubusercontent.com/beligh-hamdi/art-alum/master/photos/flayer2.png">
+      <img md-card-image
+           [defaultImage]="defaultImage"
+           [lazyLoad]="'https://raw.githubusercontent.com/beligh-hamdi/art-alum/master/photos/flayer2.png'"
+           [offset]="offset">
+
     </md-card>
   </div>
 </div>
+

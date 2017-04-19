@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogueComponent implements OnInit {
 
+  defaultImage = 'assets/img/loading.gif';
+  offset = 100;
+
   constructor() { }
 
   ngOnInit() {

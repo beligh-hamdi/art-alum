@@ -17,6 +17,9 @@ export class GalleryComponent implements OnInit {
     zoom: true,
   };
 
+  defaultImage = 'assets/img/loading.gif';
+  offset = 100;
+
   constructor() { }
 
   ngOnInit() {
